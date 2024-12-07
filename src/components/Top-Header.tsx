@@ -7,7 +7,7 @@ export default function TopHeader() {
       <Image src={LOGO} alt="LOGO" className="h-[30px]"></Image>
 
       <div>
-        <div className="h-[18px] text-[#111111] bg-[#FFFFFF] flex  items-center justify-center">
+        <div className="h-[18px] text-[#111111] bg-[#ffffff] flex  items-center justify-center shadow-md">
           <p className="h-[16] text-[10px]"> Skip to main content</p>
         </div>
 
