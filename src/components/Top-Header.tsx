@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LOGO from "../../public/images/Header/image.png";
+import LOGO from "../../public/images/Header/LOGO.png";
 import Link from "next/link";
 export default function TopHeader() {
   return (
