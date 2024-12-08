@@ -14,7 +14,7 @@ export function ButtonForEssentials({ input }: Button) {
       </button>
     </main>
   );
-}
+};  
 
 export default function TheEssentials() {
   return (
@@ -45,4 +45,5 @@ export default function TheEssentials() {
       </div>
     </main>
   );
-}
+};
+
