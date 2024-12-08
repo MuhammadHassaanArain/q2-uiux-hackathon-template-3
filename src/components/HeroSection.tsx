@@ -4,7 +4,7 @@ import Button from "./usable/Button";
 
 export default function HeroSection() {
   return (
-    <div>
+    <div className=" lg:h-[940px] h-[600px] sm:h-[670px]">
       <section className="h-[68px] sm:h-[58px] bg-[#f5f5f5]">
         <div className="h-[44px] flex flex-col content-center items-center text-center text-[#111111]">
           <h3 className="font-bold text-[16px] lg:text-[18px]">
