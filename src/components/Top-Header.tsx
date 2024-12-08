@@ -16,7 +16,7 @@ export default function TopHeader() {
         </div>
 
         <nav className="text-[#111111] text-[10px] border-l  lg:text-[15px]">
-          <Link href={""} className="border-black border-r px-2">
+          <Link href={"/nikestore"} className="border-black border-r px-2">
             Find a Store
           </Link>
           <Link href={""} className="border-black border-r px-2">
