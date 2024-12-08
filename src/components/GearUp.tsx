@@ -32,7 +32,7 @@ export default function GearUp() {
   return (
     <div className="flex justify-center">
       <main className="w-11/12 ">
-        <p className="font-bold text-[17px] text-[#111111]">Gear Up</p>
+        <p  className="font-bold text-[15px] lg:text-[17px] xl:text-[22px] text-black">Gear Up</p>
 
         <div className="  flex  justify-end ">
           <div className="lg:flex lg:justify-between gap-6 w-11/12">
