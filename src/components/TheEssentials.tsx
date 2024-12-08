@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Mens from "../../public/images/TheEssentials/mens.png";
-import Womens from "../../public/images/TheEssentials/womens.png";
+// import Womens from "../../public/images/TheEssentials/womens.png";
 import Kids from "../../public/images/TheEssentials/kids.png";
 
 interface Button {
@@ -32,7 +32,7 @@ export default function TheEssentials() {
 
           </section>
           <section className=" gap-3 relative">
-            <Image src={Womens} alt="Womens Essentials"></Image>
+            <Image src={Mens} alt="Womens Essentials"></Image>
             <ButtonForEssentials input="Women's" />
           </section>
           <section className=" gap-3 relative">
