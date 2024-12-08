@@ -22,7 +22,7 @@ export default function TopHeader() {
           <Link href={""} className="border-black border-r px-2">
             Help
           </Link>
-          <Link href={""} className="border-black border-r px-2">
+          <Link href={"/joinus"} className="border-black border-r px-2">
             Join Us
           </Link>
           <Link href={"/signin"} className="px-2">
