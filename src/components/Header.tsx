@@ -1,5 +1,6 @@
 "use client";
 import { TfiMenuAlt } from "react-icons/tfi";
+import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import SerachIcon from "../../public/images/Header/SearchIcon.png";
 import Like from "../../public/images/Header/Like.png";
@@ -31,8 +32,27 @@ export default function Header() {
             <Link href={""}>SNKRs</Link>
           </nav>
           <div className="sm:hidden">
-            <TfiMenuAlt onClick={handleMenuClick} className="text-black" />
+            {isMenuOpen ? (
+              <IoClose onClick={handleMenuClick} className="text-black" />
+            ) : (
+              <TfiMenuAlt onClick={handleMenuClick} className="text-black" />
+            )}
           </div>
+          {/* nav for mobile */}
+          {isMenuOpen && (
+            <section>
+              <nav className="text-[#111111] flex flex-col">
+                <Link href={""}>New & Featured</Link>
+                <Link href={""}>Men</Link>
+                <Link href={""}>Women</Link>
+                <Link href={""}>Kids</Link>
+                <Link href={""}>Sales</Link>
+                <Link href={""}>SNKRs</Link>
+              </nav>
+              <IoClose />
+            </section>
+          )}
+          {/*  */}
         </div>
       </section>
 
