@@ -25,7 +25,7 @@ export default function TopHeader() {
           <Link href={""} className="border-black border-r px-2">
             Join Us
           </Link>
-          <Link href={""} className="px-2">
+          <Link href={"/signin"} className="px-2">
             Sign In
           </Link>
         </nav>

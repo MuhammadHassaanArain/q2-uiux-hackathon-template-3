@@ -18,11 +18,12 @@ export default function Header() {
     <header className="h-[60px] bg-[#ffffff] my-3 lg:flex lg:items-center">
       <section className="flex justify-center  lg:w-8/12">
         <div className="flex w-11/12  justify-between ">
-          <Image
+<Link href={"/"}><Image
             src={Nikee}
             alt="Nikee LOGO"
             className="h-[20px] w-auto"
           ></Image>
+          </Link>
           <nav className="hidden  text-[#111111] space-x-4 sm:text-xs sm:justify-center sm:flex lg:text-[16px] xl:text-[18px]  w-8/12">
             <Link href={""}>New & Featured</Link>
             <Link href={""}>Men</Link>
