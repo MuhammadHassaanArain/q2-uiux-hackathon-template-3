@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import Featured from "@/components/Featured";
 import GearUp from "@/components/GearUp";
 import DontMiss from "@/components/DontMiss";
-
+import TheEssentials from "@/components/TheEssentials";
 export default function Home() {
 return(
 <main>
@@ -12,6 +12,7 @@ return(
   <Featured />
   <GearUp />
   <DontMiss />
+  <TheEssentials />
 </main>
 )
 }

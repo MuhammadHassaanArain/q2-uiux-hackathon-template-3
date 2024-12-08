@@ -6,7 +6,7 @@ export default function Featured() {
     <div className="flex justify-center">
       <main className="w-11/12">
         <p  className="font-bold text-[15px] lg:text-[17px] xl:text-[22px] text-black">Featured</p>
-        <Image src={FeaturedImage} alt="Featured Image"></Image>
+        <Image src={FeaturedImage} alt="Featured Image" className="py-5"></Image>
         <div className="flex justify-center">
           <section className="w-10/12 flex flex-col  items-center  text-center  space-y-2 lg:space-y-4 my-4">
             <p className="text-[#111111] font-bold text-[20px] lg:text-[35px]">
