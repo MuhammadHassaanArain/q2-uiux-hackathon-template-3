@@ -4,6 +4,7 @@ import Featured from "@/components/Featured";
 import GearUp from "@/components/GearUp";
 import DontMiss from "@/components/DontMiss";
 import TheEssentials from "@/components/TheEssentials";
+import HomeBottom from "@/components/HomeBottom";
 export default function Home() {
 return(
 <main>
@@ -13,6 +14,7 @@ return(
   <GearUp />
   <DontMiss />
   <TheEssentials />
+  <HomeBottom />
 </main>
 )
 }
