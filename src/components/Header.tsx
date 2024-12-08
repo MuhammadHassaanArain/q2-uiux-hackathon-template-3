@@ -40,8 +40,8 @@ export default function Header() {
           </div>
           {/* nav for mobile */}
           {isMenuOpen && (
-            <section>
-              <nav className="text-[#111111] flex flex-col">
+            <section className="bg-gray-900 px-2 rounded-md">
+              <nav className="text-gray-100 flex flex-col">
                 <Link href={""}>New & Featured</Link>
                 <Link href={""}>Men</Link>
                 <Link href={""}>Women</Link>

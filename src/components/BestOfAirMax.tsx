@@ -5,14 +5,14 @@ import RightArrow from "../../public/images/HeroSection/RightArrow.png";
 import Shoe1 from "../../public/images/BestShoes/shoe-1.png";
 import Shoe2 from "../../public/images/BestShoes/shoe-2.png";
 
-interface ShoeProps {
+ interface ShoeProps {
   image: string | StaticImageData;
   name: string;
   price: string;
   categary: string;
 }
 
-function BestShoeComponent({ image, name, price, categary }: ShoeProps) {
+export function BestShoeComponent({ image, name, price, categary }: ShoeProps) {
   return (
     <main className="bg-[#ffffff] w-[200px] md:w-[300px] lg:w-[400px]">
       <Image src={image} alt="Shoe Image"></Image>
