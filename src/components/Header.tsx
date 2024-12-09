@@ -43,7 +43,7 @@ export default function Header() {
           {isMenuOpen && (
             <section className="bg-gray-900 px-2 rounded-md">
               <nav className="text-gray-100 flex flex-col">
-                <Link href={""}>New & Featured</Link>
+                <Link href={"/newfeatured"}>New & Featured</Link>
                 <Link href={""}>Men</Link>
                 <Link href={""}>Women</Link>
                 <Link href={""}>Kids</Link>
