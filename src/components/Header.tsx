@@ -25,7 +25,7 @@ export default function Header() {
           ></Image>
           </Link>
           <nav className="hidden  text-[#111111] space-x-4 sm:text-xs sm:justify-center sm:flex lg:text-[16px] xl:text-[18px]  w-8/12">
-            <Link href={""}>New & Featured</Link>
+            <Link href={"/newfeatured"}>New & Featured</Link>
             <Link href={""}>Men</Link>
             <Link href={""}>Women</Link>
             <Link href={""}>Kids</Link>
