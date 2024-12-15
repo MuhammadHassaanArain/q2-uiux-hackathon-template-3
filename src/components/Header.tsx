@@ -74,11 +74,15 @@ export default function Header() {
             alt="LIke Button"
             className="h-[20px] w-auto"
           ></Image>
+        <button>
+          <Link href={"/orders"}>
           <Image
             src={CartIcon}
             alt="Cart Button"
             className="h-[20px] w-auto"
           ></Image>
+          </Link>
+        </button>
         </div>
       </div>
     </header>
