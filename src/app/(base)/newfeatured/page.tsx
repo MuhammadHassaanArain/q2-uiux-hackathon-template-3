@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import product1 from "../../../public/images/NewFeatured/product1.png";
-import product2 from "../../../public/images/NewFeatured/preduct2.png";
-import product3 from "../../../public/images/NewFeatured/product3.png";
+import product1 from "../../../../public/images/NewFeatured/product1.png";
+import product2 from "../../../../public/images/NewFeatured/preduct2.png";
+import product3 from "../../../../public/images/NewFeatured/product3.png";
+
 
 interface Product {
   type: string;

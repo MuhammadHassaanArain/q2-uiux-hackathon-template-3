@@ -1,6 +1,6 @@
 import Image from "next/image";
-import NIKE from "../../../../public/images/Header/Nike.png";
-import CheckBox from "../../../../public/images/Icons/checkbox.png";
+import NIKE from "../../../../../public/images/Header/Nike.png";
+import CheckBox from "../../../../../public/images/Icons/checkbox.png";
 export default function SignIn() {
   return (
    <div className="flex justify-center py-10">

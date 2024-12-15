@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Map from "../../../public/images/FindStore/map.png";
-import SearchIcon from "../../../public/images/Header/SearchIcon.png";
-import Filterbtn from "../../../public/images/FindStore/filter.png";
+import Map from "../../../../public/images/FindStore/map.png";
+import SearchIcon from "../../../../public/images/Header/SearchIcon.png";
+import Filterbtn from "../../../../public/images/FindStore/filter.png";
 
 
 export default function FindStore() {

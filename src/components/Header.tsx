@@ -30,7 +30,7 @@ export default function Header() {
             <Link href={""}>Women</Link>
             <Link href={""}>Kids</Link>
             <Link href={""}>Sales</Link>
-            <Link href={""}>SNKRs</Link>
+            <Link href={"snkrs"}>SNKRs</Link>
           </nav>
           <div className="sm:hidden">
             {isMenuOpen ? (
@@ -48,7 +48,7 @@ export default function Header() {
                 <Link href={""}>Women</Link>
                 <Link href={""}>Kids</Link>
                 <Link href={""}>Sales</Link>
-                <Link href={""}>SNKRs</Link>
+                <Link href={"/snkrs"}>SNKRs</Link>
               </nav>
               <IoClose />
             </section>
