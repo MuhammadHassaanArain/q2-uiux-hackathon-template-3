@@ -48,7 +48,7 @@ export default function Header() {
                 <Link href={""}>Women</Link>
                 <Link href={""}>Kids</Link>
                 <Link href={""}>Sales</Link>
-                <Link href={"/snkrs"}>SNKRs</Link>
+                <Link href={"/feed"}>SNKRs</Link>
               </nav>
               <IoClose />
             </section>
