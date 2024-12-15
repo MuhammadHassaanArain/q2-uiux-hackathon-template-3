@@ -1,5 +1,6 @@
 import "../globals.css";
 import TopHeader from "@/components/snkrs/TopHeader";
+import Header from "@/components/snkrs/Header";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export default function Root2Layout({
       <body className={` bg-white`}>
       
      <TopHeader />
+     <hr />
+     <Header />
      <hr />
         {children}
         <Footer />

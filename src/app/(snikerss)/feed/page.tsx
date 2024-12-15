@@ -1,7 +1,7 @@
 
 function SNKRS() {
   return (
-    <div>SNKRS</div>
+    <div>Feeds</div>
   )
 }
 

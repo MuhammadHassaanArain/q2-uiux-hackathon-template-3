@@ -8,7 +8,7 @@ export default function TopHeader() {
     <main className="text-[#757575] flex justify-between items-center py-2 sm:px-3">
       <div className=" flex">
         <Image src={LeftArrow} className="h-[22px] md:mr-2" alt="Arrow"></Image>
-        <p>Visit Nike.com</p>
+      <Link href={"/"}>  <p>Visit Nike.com</p></Link>
       </div>
       <div>
         <nav className="flex gap-5">
