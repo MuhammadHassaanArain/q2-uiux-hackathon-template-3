@@ -19,7 +19,7 @@ export default function TopHeader() {
           <Link href={"/nikestore"} className="border-black border-r px-2">
             Find a Store
           </Link>
-          <Link href={""} className="border-black border-r px-2">
+          <Link href={"/help"} className="border-black border-r px-2">
             Help
           </Link>
           <Link href={"/joinus"} className="border-black border-r px-2">
