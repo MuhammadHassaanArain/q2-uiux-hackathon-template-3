@@ -4,7 +4,6 @@ import product1 from "../../../../public/images/NewFeatured/product1.png";
 import product2 from "../../../../public/images/NewFeatured/preduct2.png";
 import product3 from "../../../../public/images/NewFeatured/product3.png";
 
-
 interface Product {
   type: string;
   name: string;
@@ -12,18 +11,29 @@ interface Product {
   color: string;
   price: string;
   image: string | StaticImageData;
+  id: string;
 }
 
-function ProductBox({ type, name, categary, color, price, image }: Product) {
+function ProductBox({
+  type,
+  name,
+  categary,
+  color,
+  price,
+  image,
+  id,
+}: Product) {
   return (
-    <main className="flex  justify-center">
+    <main className="flex  justify-center ">
       <section className="w-[350px] flex flex-col ">
-        <Image src={image} alt="Product Image"></Image>
-        <p className="text-[#9e3500]">{type}</p>
-        <p className="font-bold">{name}</p>
-        <p className="text-[#757575]">{categary}</p>
-        <p className="text-[#757575]">{color}</p>
-        <p className="text-[#111111] font-bold">MRP : ₹ {price}</p>
+        <Link href={`/newfeatured/${id}`}>
+          <Image src={image} alt="Product Image"></Image>
+          <p className="text-[#9e3500]">{type}</p>
+          <p className="font-bold">{name}</p>
+          <p className="text-[#757575]">{categary}</p>
+          <p className="text-[#757575]">{color}</p>
+          <p className="text-[#111111] font-bold">MRP : ₹ {price}</p>
+        </Link>
       </section>
     </main>
   );
@@ -124,6 +134,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="10 795.00"
+                    id="1"
                   />
                   <ProductBox
                     type="Just In"
@@ -132,6 +143,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Court Vision"
                     price="4995"
+                    id="2"
                   />
                   <ProductBox
                     type="Just In"
@@ -140,6 +152,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="8695.00"
+                    id="3"
                   />
                 </section>
                 <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
@@ -150,6 +163,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="10 795.00"
+                    id="1"
                   />
                   <ProductBox
                     type="Just In"
@@ -158,6 +172,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Court Vision"
                     price="4995"
+                    id="1"
                   />
                   <ProductBox
                     type="Just In"
@@ -166,6 +181,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="8695.00"
+                    id="1"
                   />
                 </section>
                 <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
@@ -176,6 +192,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="10 795.00"
+                    id="1"
                   />
                   <ProductBox
                     type="Just In"
@@ -184,6 +201,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Court Vision"
                     price="4995"
+                    id="1"
                   />
                   <ProductBox
                     type="Just In"
@@ -192,6 +210,7 @@ export default function NewFeatured() {
                     color="Red"
                     name="Nike Air Force 1"
                     price="8695.00"
+                    id="1"
                   />
                 </section>
               </main>
@@ -238,4 +257,4 @@ export default function NewFeatured() {
       </section>
     </div>
   );
-};
+}
