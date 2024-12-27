@@ -69,13 +69,15 @@ export default function Header() {
           </div>
         </div>
         <div className="flex justify-between items-center  w-2/12">
+         <Link href={"/orders"}>
           <Image
             src={Like}
             alt="LIke Button"
             className="h-[20px] w-auto"
           ></Image>
+          </Link>
         <button>
-          <Link href={"/orders"}>
+          <Link href={"/cart"}>
           <Image
             src={CartIcon}
             alt="Cart Button"
