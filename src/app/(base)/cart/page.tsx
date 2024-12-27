@@ -22,7 +22,7 @@ function CartItemComponent({
   image,
 }: CartItem) {
   return (
-    <main className="w-10/12 sm:w-8/12 text-[#757575] space-y-4  lg:flex  lg:w-full lg:py-3 shadow-lg  ">
+    <main className="w-10/12 sm:w-8/12 rounded-md px-3 text-[#757575] space-y-4   lg:flex  lg:w-full lg:py-3 shadow-lg  ">
       <div className="lg:w-4/12 lg:px-2">
         <Image src={image} alt={name}></Image>
       </div>
@@ -65,7 +65,7 @@ export default function Cart() {
             <p className="font-bold lg:text-left  lg:w-full text-[#111111] py-7 text-[25px]">
               Bag
             </p>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center space-y-11">
               <CartItemComponent
                 name="Nike Dri-FIT ADV TechKnit Ultra"
                 description="Men's Short-Sleeve Running Top Ashen Slate/Cobait Bliss"
