@@ -4,7 +4,6 @@ import Product2 from "../../../../public/images/BestShoes/shoe-1.png";
 import Deliver from "../../../../public/images/checkout/deliver.png";
 import Dot from "../../../../public/images/checkout/dot.png";
 import DownArrow from "../../../../public/images/checkout/downarrow.png";
-
 interface CartItem {
   name: string;
   quantity: number;
@@ -14,7 +13,7 @@ interface CartItem {
 }
 function CartItemComponent({ name, quantity, size, price, image }: CartItem) {
   return (
-    <main className="w-11/12 gap-2  rounded-md text-[#757575]  flex ">
+    <main className="w-11/12 md:w-8/12 gap-2  rounded-md text-[#757575]  flex ">
       <div className=" w-7/12 h-full ">
         <Image src={image} alt={name}></Image>
       </div>
@@ -35,8 +34,8 @@ function CartItemComponent({ name, quantity, size, price, image }: CartItem) {
 
 export default function Checkout() {
   return (
-    <main className="mb-32 mt-5">
-      <section className="text-[#111111]   flex flex-col items-center  pb-14">
+    <main className="mb-32 mt-5 lg:flex lg:flex-row-reverse lg:justify-center">
+      <section className="text-[#111111]     flex flex-col items-center  pb-14 lg:w-5/12">
         <div className="w-10/12  space-y-3 py-6">
           <p className="font-bold text-[25px]">order Summary</p>
           <div className="flex justify-between text-[#8d8d8d]">
@@ -58,7 +57,7 @@ export default function Checkout() {
             taxes)
           </p>
         </div>
-        <p className="font-bold  w-11/12 text-start py-3">
+        <p className="font-bold  w-11/12 md:w-8/12 text-start py-3">
           Arrives Mon,27 Mar-Wed,12 Apr
         </p>
 
@@ -79,18 +78,19 @@ export default function Checkout() {
           />
         </div>
       </section>
-      <section className="flex justify-center">
+      <section className="flex justify-center   lg:w-5/12">
         <main className="w-10/12">
           <div className="text-[#111111]">
             <p className=" font-bold">How would you like to get your order?</p>
             <p className="text-[#757575]">
-              Customs regulation for India require a copy of the recipient&apos;s
-              KYC. The address on the KYC needs to match the shipping address.
-              Our courier will contact you via SMS/email to obtain a copy of
-              your KYC. The KYC will be stored securely and used solely for the
-              purpose of clearing customs (including sharing it with customs
-              officials) for all orders and returns. If your KYC does not match
-              your shipping address, please click the link for more information.{" "}
+              Customs regulation for India require a copy of the
+              recipient&apos;s KYC. The address on the KYC needs to match the
+              shipping address. Our courier will contact you via SMS/email to
+              obtain a copy of your KYC. The KYC will be stored securely and
+              used solely for the purpose of clearing customs (including sharing
+              it with customs officials) for all orders and returns. If your KYC
+              does not match your shipping address, please click the link for
+              more information.{" "}
               <span className="font-bold underline">Learn More</span>
             </p>
             <div className="rounded-lg border border-black flex font-bold  p-5 gap-4 items-center my-8">
@@ -181,7 +181,9 @@ export default function Checkout() {
             </div>
           </div>
           <div>
-            <p className="font-bold text-[#111111] py-4">What&apos;s your PAN?</p>
+            <p className="font-bold text-[#111111] py-4">
+              What&apos;s your PAN?
+            </p>
             <div className="text-[#757575] mb-2">
               <div className="text-[#111111] p-4 rounded-lg border border-[#cccccc]">
                 PAN
@@ -200,10 +202,13 @@ export default function Checkout() {
             <p className="py-14">
               <input type="checkbox" className="mr-2" /> I have read and consent
               to eShopWorld processing my information in accordance with the
-              <span className="underline" > Privacy Statement</span> and <span className="underline" >Cookie Policy</span>. eShopWorld is a trusted Nike
-              partner.
+              <span className="underline"> Privacy Statement</span> and{" "}
+              <span className="underline">Cookie Policy</span>. eShopWorld is a
+              trusted Nike partner.
             </p>
-            <button className="text-[#757575] bg-[#f5f5f5] w-full rounded-3xl py-4">Continue</button>
+            <button className="text-[#757575] bg-[#f5f5f5] w-full rounded-3xl py-4">
+              Continue
+            </button>
           </div>
           <div className="text-[#757575]">
             <hr />
@@ -222,4 +227,4 @@ export default function Checkout() {
       </section>
     </main>
   );
-};
+}
