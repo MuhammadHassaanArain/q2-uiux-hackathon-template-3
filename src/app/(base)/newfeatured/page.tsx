@@ -126,6 +126,7 @@ export default function NewFeatured() {
               {/*  */}
 
               <main>
+
                 <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
                   <ProductBox
                     type="Just In"
