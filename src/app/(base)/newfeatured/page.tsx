@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import product1 from "../../../../public/images/NewFeatured/product1.png";
-import product2 from "../../../../public/images/NewFeatured/preduct2.png";
-import product3 from "../../../../public/images/NewFeatured/product3.png";
-
+// import product1 from "../../../../public/images/NewFeatured/product1.png";
+// import product2 from "../../../../public/images/NewFeatured/preduct2.png";
+// import product3 from "../../../../public/images/NewFeatured/product3.png";
+import { client } from "../../../sanity/lib/client";
 interface Product {
   type: string;
   name: string;
@@ -13,7 +13,15 @@ interface Product {
   image: string | StaticImageData;
   id: string;
 }
-
+interface SanityProduct {
+  status: string;
+  productName: string;
+  category: string;
+  colors: string;
+  price: string;
+  imageUrl: string | StaticImageData;
+  _id: string;
+}
 function ProductBox({
   type,
   name,
@@ -27,7 +35,12 @@ function ProductBox({
     <main className="flex  justify-center ">
       <section className="w-[350px] flex flex-col ">
         <Link href={`/newfeatured/${id}`}>
-          <Image src={image} alt="Product Image"></Image>
+          <Image
+            src={image}
+            alt="Product Image"
+            width={500}
+            height={500}
+          ></Image>
           <p className="text-[#9e3500]">{type}</p>
           <p className="font-bold">{name}</p>
           <p className="text-[#757575]">{categary}</p>
@@ -43,7 +56,20 @@ import { IoIosArrowUp } from "react-icons/io";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FiFilter } from "react-icons/fi";
 
-export default function NewFeatured() {
+export default async function NewFeatured() {
+  const querry = `*[_type=="product" ]{
+  _id,
+  productName,
+  colors,
+  category,
+  status,
+  inventory,
+  price,
+   "imageUrl": image.asset -> url
+}`;
+
+  const data = await client.fetch(querry);
+
   return (
     <div>
       <section>
@@ -126,93 +152,21 @@ export default function NewFeatured() {
               {/*  */}
 
               <main>
-
                 <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product1}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="10 795.00"
-                    id="1"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product2}
-                    color="Red"
-                    name="Nike Court Vision"
-                    price="4995"
-                    id="2"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Women's SHoe"
-                    image={product3}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="8695.00"
-                    id="3"
-                  />
-                </section>
-                <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product1}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="10 795.00"
-                    id="1"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product2}
-                    color="Red"
-                    name="Nike Court Vision"
-                    price="4995"
-                    id="1"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Women's SHoe"
-                    image={product3}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="8695.00"
-                    id="1"
-                  />
-                </section>
-                <section className="text-black gap-4  justify-end grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 ">
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product1}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="10 795.00"
-                    id="1"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Men's Shoes"
-                    image={product2}
-                    color="Red"
-                    name="Nike Court Vision"
-                    price="4995"
-                    id="1"
-                  />
-                  <ProductBox
-                    type="Just In"
-                    categary="Women's SHoe"
-                    image={product3}
-                    color="Red"
-                    name="Nike Air Force 1"
-                    price="8695.00"
-                    id="1"
-                  />
+                  {data.map((item: SanityProduct, index: number) => {
+                    return (
+                      <ProductBox
+                        key={index}
+                        type={item.status}
+                        categary={item.category}
+                        image={item.imageUrl}
+                        color={item.colors}
+                        name={item.productName}
+                        price={item.price}
+                        id={item._id}
+                      />
+                    );
+                  })}
                 </section>
               </main>
             </div>

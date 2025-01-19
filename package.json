@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "import-data":"node scripts/data-migration.mjs"
+    "import-data": "node scripts/data-migration.mjs"
   },
   "dependencies": {
     "@sanity/client": "^6.25.0",
