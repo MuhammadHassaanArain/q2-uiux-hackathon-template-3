@@ -2,20 +2,20 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import LeftArrow from "../../public/images/HeroSection/leftarrrow.png";
 import RightArrow from "../../public/images/HeroSection/RightArrow.png";
-import Shoe1 from "../../public/images/BestShoes/shoe-1.png";
-import Shoe2 from "../../public/images/BestShoes/shoe-2.png";
-
- interface ShoeProps {
+// import Shoe1 from "../../public/images/BestShoes/shoe-1.png";
+// import Shoe2 from "../../public/images/BestShoes/shoe-2.png";
+import { client } from "@/sanity/lib/client";
+interface ShoeProps {
   image: string | StaticImageData;
   name: string;
-  price: string;
+  price: number;
   categary: string;
 }
 
 export function BestShoeComponent({ image, name, price, categary }: ShoeProps) {
   return (
     <main className="bg-[#ffffff] w-[200px] md:w-[300px] lg:w-[400px]">
-      <Image src={image} alt="Shoe Image"></Image>
+      <Image src={image} alt="Shoe Image" width={500} height={500}></Image>
       <div className="md:space-y-2">
         <div className="text-black md:flex md:justify-between">
           <p className="text-[12px] md:text-[15px] font-bold">{name}</p>
@@ -26,8 +26,23 @@ export function BestShoeComponent({ image, name, price, categary }: ShoeProps) {
     </main>
   );
 }
-
-export default function BestOfAirMax() {
+interface TopProduct {
+  price: number;
+  category: string;
+  imageUrl: string;
+  productName: string;
+  _id: string;
+}
+export default async function BestOfAirMax() {
+  const querry = `*[_type=="product" && status=="Trending" ]{
+  _id,
+  productName,
+  price,
+  category,
+ "imageUrl": image.asset -> url
+}`;
+  const topProducts = await client.fetch(querry);
+  console.log(topProducts);
   return (
     <main className="h-[350px] md:h-[450px]  lg:h-[550px] xl:h-[600px] flex  flex-col items-center my-8">
       <div className="flex text-[#111111] w-11/12  justify-between  ">
@@ -54,43 +69,19 @@ export default function BestOfAirMax() {
       </div>
 
       <section className="w-11/12 flex justify-center my-4  overflow-x-auto ">
-        <div className="flex space-x-2 gap-4  ">
-          <BestShoeComponent
-            image={Shoe1}
-            name={"Nike Air Max Pulse"}
-            price={"13,995"}
-            categary={"Women's Shoes"}
-          />
-          <BestShoeComponent
-            image={Shoe2}
-            name={"Nike Air Max 97 SE"}
-            price={"16,995"}
-            categary={"Men's Shoes"}
-          />
-          <BestShoeComponent
-            image={Shoe1}
-            name={"Nike Air Max Pulse"}
-            price={"13,995"}
-            categary={"Men's Shoes"}
-          />
-          <BestShoeComponent
-            image={Shoe1}
-            name={"Nike Air Max Pulse"}
-            price={"13,995"}
-            categary={"Women's Shoes"}
-          />
-          <BestShoeComponent
-            image={Shoe2}
-            name={"Nike Air Max 97 SE"}
-            price={"16,995"}
-            categary={"Men's Shoes"}
-          />
-          <BestShoeComponent
-            image={Shoe1}
-            name={"Nike Air Max Pulse"}
-            price={"13,995"}
-            categary={"Men's Shoes"}
-          />
+        <div className="flex space-x-2 gap-4 ">
+          {topProducts.map((product: TopProduct, index: number) => (
+            <>
+              {" "}
+              <BestShoeComponent
+                key={index}
+                image={product.imageUrl}
+                name={product.productName}
+                price={product.price}
+                categary={product.category}
+              />
+            </>
+          ))}
         </div>
       </section>
     </main>
